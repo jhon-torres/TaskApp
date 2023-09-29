@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1 class="text-secondary">{{task.title}}</h1>
+            {% if error is not None %}
+                <div class="alert alert-danger d-flex align-items-center text-danger" role="alert">
+                    {{error}}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary d-flex m-auto">Update</button>
+            </form>
+            <div class="d-flex justify-content-between">
+                <form action="{% url 'complete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-success">Complete</button>
+                </form>
+    
+                <form action="{% url 'delete_task' task.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

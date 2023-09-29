@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-1 text-center">App Tasks</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus alias vel expedita ad, illo a sit nam repudiandae omnis ex accusantium quaerat maxime error sapiente ullam fuga quis dolores unde? Beatae recusandae tenetur eos soluta quo delectus, veritatis qui, error maiores, aliquid impedit odio esse blanditiis accusamus eaque deleniti ab assumenda? Dolores mollitia similique maxime modi earum quia iure placeat debitis minus eius reprehenderit at esse laudantium quaerat maiores nostrum molestias iste assumenda ad, perferendis voluptatum! Numquam totam quos facere consequuntur eius similique illo sed! Laudantium nobis impedit voluptatem in. Fugiat, cupiditate reprehenderit in voluptatem quas sapiente expedita sed aut.</p>
+        <div class="text-center">
+            <a class="btn btn-secondary" href="{% url 'signin' %}">
+                Sign in
+            </a>
+            <a class="btn btn-dark" href="{% url 'signup' %}">
+                Sign up
+            </a>
+        </div>
+    </section>
+</main>
+{% endblock %}
